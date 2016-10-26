@@ -3,8 +3,10 @@
  */
 const mongoose = require('mongoose');
 
+const mongoURL = process.env.MONGODB_URI || 'mongodb://localhost:27017/citations';
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/citations');
+mongoose.connect(mongoURL);
 
 var db = mongoose.connection;
 
